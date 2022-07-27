@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+/*Crear un programa que implemente una funcion lambda,
+una interfaz y una clase donde se pase por consola los resultados de 1 suma.
+Se deben pedir 2 valores por consola. 
+*/
+
+public class Calculadora {
+	public static void main(String args [])
+    {  
+		Calculo suma = (a, b) -> a + b;
+		double dato1;
+		double dato2;
+		double resultado;
+		Scanner captura = new Scanner(System.in);
+		System.out.println("Ingrese el primer número");
+        dato1 = captura.nextDouble();
+		System.out.println("Ingrese segundo número para el calculo\t");
+		dato2 = captura.nextDouble();
+		//System.out.println("El resultado es: "+ suma);
+		
+		captura.close();
+    }
+	
+	 public static void imprimir(Double dato1,Double dato2, Calculo calculo) {
+		 	Double resultado = calculo.calculo(dato1, dato2);
+	        System.out.println(resultado);
+		 
+	 }
+    
+}
+
+interface Calculo{
+	Double calculo (double a, double b);
+}
