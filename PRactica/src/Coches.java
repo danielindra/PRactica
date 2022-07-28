@@ -164,14 +164,16 @@ public class Coches {
         
         Iterator<String> it = organizado.iterator();
         String datoEscribir = null;
+        String linea = null;
         	
         while(it.hasNext()) {
         	String dato =it.next();
         	for(int i=0; i<9; i++) {
             	if(dato.equals(coche.get(i))) {
-            		System.out.println("El coche es: " + coche.get(i) + " El modelo: " + modelo.get(i) + " La velocidad máxima: " + velocidadMax.get(i) + "\n");
+            		linea = " El coche es: " + coche.get(i) + " El modelo: " + modelo.get(i) + " La velocidad máxima: " + velocidadMax.get(i) + "\n";
+            		System.out.println(linea);
             	}
-            datoEscribir = datoEscribir + dato;
+            datoEscribir = datoEscribir + linea;
             File archivo = new File(nombreArchivo);
             List<String> line = Arrays.asList(datoEscribir);
             try {
